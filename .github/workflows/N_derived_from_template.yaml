@@ -4,6 +4,7 @@ on:
     - cron:  '0 0 * * *'
   workflow_dispatch:
   repository_dispatch:
+    types: [deploy-to-dp]
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
