@@ -1,0 +1,14 @@
+name: Sync template repository on here
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch: 
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    name: actions-template-sync
+    steps:
+      - uses: AndreasAugustin/actions-template-sync@v0.4.2-draft
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_repo_path: 'DavideMessinaARS/template'
